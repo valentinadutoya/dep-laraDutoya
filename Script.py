@@ -3,14 +3,14 @@ import sqlite3
 from datetime import datetime
 
 # Configuración del puerto serie
-puerto_serial = '/dev/ttyUSB0'  # Cambia esto según tu sistema
+puerto_serial = '/dev/ttyACM1'  # Cambia esto según tu sistema
 baud_rate = 9600
 
 # Conectar al puerto serie
 ser = serial.Serial(puerto_serial, baud_rate, timeout=1)
 
 # Conectar a la base de datos SQLite
-conn = sqlite3.connect('sensores.db')
+conn = sqlite3.connect('mediciones.db')
 c = conn.cursor()
 
 # Crear la tabla si no existe
